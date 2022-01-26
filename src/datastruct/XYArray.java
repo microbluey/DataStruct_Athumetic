@@ -148,11 +148,15 @@ public class XYArray<T> {
     public T delete(int index){
         checkIndex(index);
         T ret = data[index];
-        for (int i = size - 1; i >= index; i++) {
-            data[i] = data[i + 1];
+        for (int i = index + 1; i < size; i++) {
+            data[i - 1] = data[i];
         }
         size--;
         data[size] = null;
+        //缩容
+        if (size == data.length / 4 && data.length / 2 != 0){
+            resize(data.length / 2);
+        }
         return ret;
     }
 
@@ -202,7 +206,7 @@ public class XYArray<T> {
      */
     private void resize(int capacity){
         T[] newData = (T[]) new Object[capacity];
-        for (int i = 0; i < data.length; i++) {
+        for (int i = 0; i < size; i++) {
             newData[i] = data[i];
         }
         data = newData;
