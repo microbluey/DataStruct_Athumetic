@@ -97,12 +97,11 @@ public class XYArray<T> {
         sb.append('[');
         for (int i = 0; i < size; i++) {
             sb.append(data[i]);
-            if (i == size - 1){
-                sb.append(']');
-            }else {
+            if (i != size - 1){
                 sb.append(',');
             }
         }
+        sb.append(']');
         return sb.toString();
     }
 
