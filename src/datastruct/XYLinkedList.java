@@ -1,5 +1,7 @@
 package datastruct;
 
+import java.util.LinkedList;
+
 public class XYLinkedList<T> {
     private XYNode head = null;
 
@@ -123,6 +125,11 @@ public class XYLinkedList<T> {
         }
         q.setNext(q.getNext().getNext());
     }
+
+    /**
+     * 根据节点值删除
+     * @param value 被删除的值
+     */
     public void deleteByValue(T value){
         if (head == null){
             return;
@@ -142,17 +149,30 @@ public class XYLinkedList<T> {
         }else{
             q.setNext(q.getNext().getNext());
         }
-
     }
 
+}
+class XYNode<T> {
+    private T data;
+    private XYNode next;
 
+    public XYNode(T data,XYNode next){
+        this.data = data;
+        this.next = next;
+    }
 
-
-
-
-
-
-
+    public T getData(){
+        return data;
+    }
+    public XYNode getNext(){
+        return next;
+    }
+    public void setData(T data){
+        this.data = data;
+    }
+    public void setNext(XYNode next){
+        this.next = next;
+    }
 }
 
 
