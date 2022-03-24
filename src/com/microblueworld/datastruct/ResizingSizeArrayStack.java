@@ -1,4 +1,4 @@
-package datastruct;
+package com.microblueworld.datastruct;
 
 import java.util.Iterator;
 

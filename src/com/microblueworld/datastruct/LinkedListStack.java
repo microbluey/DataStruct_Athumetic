@@ -1,4 +1,4 @@
-package datastruct;
+package com.microblueworld.datastruct;
 
 /**
  * 基于链表的栈结构实现
