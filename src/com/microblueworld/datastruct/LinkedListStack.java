@@ -20,8 +20,14 @@ public class LinkedListStack<T> {
      * @return true: 为空，false:不为空
      */
     public boolean isEmpty(){
-        return  !(N > 0);
+        return  first == null;
     }
+
+    /**
+     * 获取栈元素数量
+     * @return 栈元素数量
+     */
+    public int getSize(){return N;}
 
     /**
      * 入栈
